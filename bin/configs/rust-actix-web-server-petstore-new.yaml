@@ -1,0 +1,6 @@
+generatorName: rust-actix-web-server
+outputDir: samples/server/petstore/rust/actix/web/server
+inputSpec: modules/openapi-generator/src/test/resources/3_0/petstore.yaml
+templateDir: modules/openapi-generator/src/main/resources/rust-actix-web-server
+additionalProperties:
+  hideGenerationTimestamp: "true"
