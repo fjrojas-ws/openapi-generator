@@ -35,11 +35,11 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
         super();
 
         outputFolder = "generated-code" + File.separator + "rust-actix-web-server";
-        modelTemplateFiles.put("model.mustache", ".zz");
-        apiTemplateFiles.put("api.mustache", ".zz");
+        modelTemplateFiles.put("model.mustache", ".rs");
+        apiTemplateFiles.put("api.mustache", ".rs");
         embeddedTemplateDir = templateDir = "rust-actix-web-server";
-        apiPackage = "Apis";
-        modelPackage = "Models";
+        //apiPackage = "Apis";
+        //modelPackage = "Models";
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
         // TODO: Fill this out.
     }
