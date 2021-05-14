@@ -41,6 +41,7 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
         //apiPackage = "Apis";
         //modelPackage = "Models";
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
+        supportingFiles.add(new SupportingFile("test.rs", "", "test.rs"));
         // TODO: Fill this out.
     }
 }
