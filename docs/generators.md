@@ -122,6 +122,7 @@ The following generators are available:
 * [python-flask](generators/python-flask.md)  
 * [ruby-on-rails](generators/ruby-on-rails.md)  
 * [ruby-sinatra](generators/ruby-sinatra.md)  
+* [rust-actix-web-server](generators/rust-actix-web-server.md)  
 * [rust-server](generators/rust-server.md)  
 * [scala-akka-http-server (beta)](generators/scala-akka-http-server.md)  
 * [scala-finch](generators/scala-finch.md)  
