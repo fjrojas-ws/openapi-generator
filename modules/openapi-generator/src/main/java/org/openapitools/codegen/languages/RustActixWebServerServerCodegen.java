@@ -220,6 +220,7 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
 //        supportingFiles.add(new SupportingFile("lib.mustache", "src", "lib.rs"));
 //        supportingFiles.add(new SupportingFile("context.mustache", "src", "context.rs"));
 //        supportingFiles.add(new SupportingFile("models.mustache", "src", "models.rs"));
+        supportingFiles.add(new SupportingFile("model.mustache", "src", "model.rs"));
 //        supportingFiles.add(new SupportingFile("header.mustache", "src", "header.rs"));
 //        supportingFiles.add(new SupportingFile("server-mod.mustache", "src/server", "mod.rs"));
 //        supportingFiles.add(new SupportingFile("client-mod.mustache", "src/client", "mod.rs"));
@@ -233,10 +234,6 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
         supportingFiles.add(new SupportingFile("test.rs", "", "test.rs"));
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md")
                 .doNotOverwrite());
-//    }
-
-
-
 
     }
 }
