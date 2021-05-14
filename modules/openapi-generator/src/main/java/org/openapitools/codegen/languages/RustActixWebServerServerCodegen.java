@@ -192,6 +192,14 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
         typeMapping.put("object", "serde_json::Value");
         typeMapping.put("AnyType", "serde_json::Value");
 
+        importMapping = new HashMap<String, String>();
+
+        cliOptions.clear();
+        cliOptions.add(new CliOption(CodegenConstants.PACKAGE_NAME,
+                "Rust crate name (convention: snake_case).")
+                .defaultValue("openapi_client"));
+        cliOptions.add(new CliOption(CodegenConstants.PACKAGE_VERSION,
+                "Rust crate version."));
 
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
         supportingFiles.add(new SupportingFile("test.rs", "", "test.rs"));
