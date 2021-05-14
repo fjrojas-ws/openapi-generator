@@ -201,6 +201,13 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
         cliOptions.add(new CliOption(CodegenConstants.PACKAGE_VERSION,
                 "Rust crate version."));
 
+        /*
+         * Additional Properties.  These values can be passed to the templates and
+         * are available in models, apis, and supporting files
+         */
+        additionalProperties.put("apiVersion", apiVersion);
+        additionalProperties.put("apiPath", apiPath);
+
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
         supportingFiles.add(new SupportingFile("test.rs", "", "test.rs"));
 
