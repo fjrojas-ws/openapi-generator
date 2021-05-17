@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 import static org.openapitools.codegen.utils.StringUtils.camelize;
 import static org.openapitools.codegen.utils.StringUtils.underscore;
 
-public class RustActixWebServerServerCodegen extends DefaultCodegen implements CodegenConfig {
+public class RustActixWebServerServerCodegen extends RustServerCodegen implements CodegenConfig {
     public static final String PROJECT_NAME = "projectName";
 
     static final Logger LOGGER = LoggerFactory.getLogger(RustActixWebServerServerCodegen.class);
@@ -45,7 +45,7 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
     protected String serverHost = "localhost";
     protected int serverPort = 8080;
     protected String projectName = "openapi-server";
-    protected String apiPath = "rust-server";
+    protected String apiPath = "rust-actix-web-server";
     protected String apiDocPath = "docs/";
     protected String modelDocPath = "docs/";
     protected String packageName;
@@ -93,7 +93,6 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
         hideGenerationTimestamp = Boolean.FALSE;
 
         // set the output folder here
-        // outputFolder = "generated-code/rust-server";
         outputFolder = "generated-code" + File.separator + "rust-actix-web-server";
 
         /*
@@ -111,7 +110,7 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
          * class
          */
         apiTemplateFiles.clear();
-        // apiTemplateFiles.put("api.mustache", ".rs");
+        apiTemplateFiles.put("api.mustache", ".rs");
 
         modelDocTemplateFiles.put("model_doc.mustache", ".md");
         apiDocTemplateFiles.put("api_doc.mustache", ".md");
@@ -213,6 +212,8 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
          * entire object tree available.  If the input file has a suffix of `.mustache
          * it will be processed by the template engine.  Otherwise, it will be copied
          */
+        supportingFiles.clear();
+
 //        supportingFiles.add(new SupportingFile("openapi.mustache", "api", "openapi.yaml"));
 //        supportingFiles.add(new SupportingFile("Cargo.mustache", "", "Cargo.toml"));
 //        supportingFiles.add(new SupportingFile("cargo-config", ".cargo", "config"));
@@ -220,7 +221,7 @@ public class RustActixWebServerServerCodegen extends DefaultCodegen implements C
 //        supportingFiles.add(new SupportingFile("lib.mustache", "src", "lib.rs"));
 //        supportingFiles.add(new SupportingFile("context.mustache", "src", "context.rs"));
 //        supportingFiles.add(new SupportingFile("models.mustache", "src", "models.rs"));
-        supportingFiles.add(new SupportingFile("model.mustache", "src", "model.rs"));
+        supportingFiles.add(new SupportingFile("model.mustache", "src/model", "model.rs"));
 //        supportingFiles.add(new SupportingFile("header.mustache", "src", "header.rs"));
 //        supportingFiles.add(new SupportingFile("server-mod.mustache", "src/server", "mod.rs"));
 //        supportingFiles.add(new SupportingFile("client-mod.mustache", "src/client", "mod.rs"));
