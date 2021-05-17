@@ -90,7 +90,7 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
         //modelPackage = "Models";
 
         // Show the generation timestamp by default
-        hideGenerationTimestamp = Boolean.FALSE;
+        //// hideGenerationTimestamp = Boolean.FALSE;
 
         // set the output folder here
         outputFolder = "generated-code" + File.separator + "rust-actix-web-server";
@@ -110,10 +110,7 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
          * class
          */
         apiTemplateFiles.clear();
-        apiTemplateFiles.put("api.mustache", ".rs");
-
-        modelDocTemplateFiles.put("model_doc.mustache", ".md");
-        apiDocTemplateFiles.put("api_doc.mustache", ".md");
+        //// apiTemplateFiles.put("api.mustache", ".rs");
 
         /*
          * Template Location.  This is the location which templates will be read from.  The generator
@@ -122,74 +119,6 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
         // embeddedTemplateDir = templateDir = "rust-server";
         embeddedTemplateDir = templateDir = "rust-actix-web-server";
 
-        /*
-         * Reserved words.  Override this with reserved words specific to your language
-         */
-        setReservedWordsLowerCase(
-                Arrays.asList(
-                        // From https://doc.rust-lang.org/grammar.html#keywords
-                        "abstract", "alignof", "as", "become", "box", "break", "const",
-                        "continue", "crate", "do", "else", "enum", "extern", "false",
-                        "final", "fn", "for", "if", "impl", "in", "let", "loop", "macro",
-                        "match", "mod", "move", "mut", "offsetof", "override", "priv",
-                        "proc", "pub", "pure", "ref", "return", "Self", "self", "sizeof",
-                        "static", "struct", "super", "trait", "true", "type", "typeof",
-                        "unsafe", "unsized", "use", "virtual", "where", "while", "yield"
-                )
-        );
-
-        defaultIncludes = new HashSet<String>(
-                Arrays.asList(
-                        "map",
-                        "array")
-        );
-
-        languageSpecificPrimitives = new HashSet<String>(
-                Arrays.asList(
-                        "bool",
-                        "char",
-                        "i8",
-                        "i16",
-                        "i32",
-                        "i64",
-                        "u8",
-                        "u16",
-                        "u32",
-                        "u64",
-                        "isize",
-                        "usize",
-                        "f32",
-                        "f64",
-                        "str",
-                        "String")
-        );
-
-        instantiationTypes.clear();
-        instantiationTypes.put("array", "Vec");
-        instantiationTypes.put("map", "std::collections::HashMap");
-
-        typeMapping.clear();
-        typeMapping.put("number", "f64");
-        typeMapping.put("integer", "i32");
-        typeMapping.put("long", "i64");
-        typeMapping.put("float", "f32");
-        typeMapping.put("double", "f64");
-        typeMapping.put("string", "String");
-        typeMapping.put("UUID", uuidType);
-        typeMapping.put("URI", "String");
-        typeMapping.put("byte", "u8");
-        typeMapping.put("ByteArray", bytesType);
-        typeMapping.put("binary", bytesType);
-        typeMapping.put("boolean", "bool");
-        typeMapping.put("date", "chrono::DateTime::<chrono::Utc>");
-        typeMapping.put("DateTime", "chrono::DateTime::<chrono::Utc>");
-        typeMapping.put("password", "String");
-        typeMapping.put("File", bytesType);
-        typeMapping.put("file", bytesType);
-        typeMapping.put("array", "Vec");
-        typeMapping.put("map", "std::collections::HashMap");
-        typeMapping.put("object", "serde_json::Value");
-        typeMapping.put("AnyType", "serde_json::Value");
 
         importMapping = new HashMap<String, String>();
 
@@ -212,7 +141,7 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
          * entire object tree available.  If the input file has a suffix of `.mustache
          * it will be processed by the template engine.  Otherwise, it will be copied
          */
-        supportingFiles.clear();
+         supportingFiles.clear();
 
 //        supportingFiles.add(new SupportingFile("openapi.mustache", "api", "openapi.yaml"));
 //        supportingFiles.add(new SupportingFile("Cargo.mustache", "", "Cargo.toml"));
@@ -220,8 +149,8 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
 //        supportingFiles.add(new SupportingFile("gitignore", "", ".gitignore"));
 //        supportingFiles.add(new SupportingFile("lib.mustache", "src", "lib.rs"));
 //        supportingFiles.add(new SupportingFile("context.mustache", "src", "context.rs"));
-//        supportingFiles.add(new SupportingFile("models.mustache", "src", "models.rs"));
-        supportingFiles.add(new SupportingFile("model.mustache", "src/model", "model.rs"));
+        supportingFiles.add(new SupportingFile("models.mustache", "src/user", "models.rs"));
+        supportingFiles.add(new SupportingFile("routes.mustache", "src/user", "routes.rs"));
 //        supportingFiles.add(new SupportingFile("header.mustache", "src", "header.rs"));
 //        supportingFiles.add(new SupportingFile("server-mod.mustache", "src/server", "mod.rs"));
 //        supportingFiles.add(new SupportingFile("client-mod.mustache", "src/client", "mod.rs"));
