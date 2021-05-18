@@ -155,10 +155,10 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
         supportingFiles.add(new SupportingFile("schema.mustache", "src", "schema.rs"));
         supportingFiles.add(new SupportingFile("test.mustache", "src", "test.rs"));
 
-        supportingFiles.add(new SupportingFile("model.mustache", "src/user", "model.rs"));
-        supportingFiles.add(new SupportingFile("mod.mustache", "src/user", "mod.rs"));
-        supportingFiles.add(new SupportingFile("routes.mustache", "src/user", "routes.rs"));
-        supportingFiles.add(new SupportingFile("tests.mustache", "src/user", "tests.rs"));
+        supportingFiles.add(new SupportingFile("model.mustache", "src/api", "model.rs"));
+        supportingFiles.add(new SupportingFile("mod.mustache", "src/api", "mod.rs"));
+        supportingFiles.add(new SupportingFile("routes.mustache", "src/api", "routes.rs"));
+        supportingFiles.add(new SupportingFile("tests.mustache", "src/api", "tests.rs"));
 
 //        supportingFiles.add(new SupportingFile("header.mustache", "src", "header.rs"));
 //        supportingFiles.add(new SupportingFile("server-mod.mustache", "src/server", "mod.rs"));
