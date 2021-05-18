@@ -144,13 +144,22 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
          supportingFiles.clear();
 
 //        supportingFiles.add(new SupportingFile("openapi.mustache", "api", "openapi.yaml"));
-//        supportingFiles.add(new SupportingFile("Cargo.mustache", "", "Cargo.toml"));
+        supportingFiles.add(new SupportingFile("Cargo.mustache", "", "Cargo.toml"));
 //        supportingFiles.add(new SupportingFile("cargo-config", ".cargo", "config"));
 //        supportingFiles.add(new SupportingFile("gitignore", "", ".gitignore"));
 //        supportingFiles.add(new SupportingFile("lib.mustache", "src", "lib.rs"));
 //        supportingFiles.add(new SupportingFile("context.mustache", "src", "context.rs"));
-        supportingFiles.add(new SupportingFile("models.mustache", "src/user", "models.rs"));
+        supportingFiles.add(new SupportingFile("api_error.mustache", "src", "api_error.rs"));
+        supportingFiles.add(new SupportingFile("db.mustache", "src", "db.rs"));
+        supportingFiles.add(new SupportingFile("main.mustache", "src", "main.rs"));
+        supportingFiles.add(new SupportingFile("schema.mustache", "src", "schema.rs"));
+        supportingFiles.add(new SupportingFile("test.mustache", "src", "test.rs"));
+
+        supportingFiles.add(new SupportingFile("model.mustache", "src/user", "model.rs"));
+        supportingFiles.add(new SupportingFile("mod.mustache", "src/user", "mod.rs"));
         supportingFiles.add(new SupportingFile("routes.mustache", "src/user", "routes.rs"));
+        supportingFiles.add(new SupportingFile("tests.mustache", "src/user", "tests.rs"));
+
 //        supportingFiles.add(new SupportingFile("header.mustache", "src", "header.rs"));
 //        supportingFiles.add(new SupportingFile("server-mod.mustache", "src/server", "mod.rs"));
 //        supportingFiles.add(new SupportingFile("client-mod.mustache", "src/client", "mod.rs"));
@@ -161,7 +170,6 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
 //        supportingFiles.add(new SupportingFile("example-server-chain.pem", "examples", "server-chain.pem"));
 //        supportingFiles.add(new SupportingFile("example-server-key.pem", "examples", "server-key.pem"));
 
-        supportingFiles.add(new SupportingFile("test.rs", "", "test.rs"));
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md")
                 .doNotOverwrite());
 
