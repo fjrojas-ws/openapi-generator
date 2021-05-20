@@ -48,20 +48,21 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
     protected String apiPath = "rust-actix-web-server";
     protected String apiDocPath = "docs/";
     protected String modelDocPath = "docs/";
-    protected String packageName;
-    protected String packageVersion;
-    protected String externCrateName;
-    protected Map<String, Map<String, String>> pathSetMap = new HashMap();
-    protected Map<String, Map<String, String>> callbacksPathSetMap = new HashMap();
-
-    private static final String uuidType = "uuid::Uuid";
-    private static final String bytesType = "swagger::ByteArray";
-
-    private static final String xmlMimeType = "application/xml";
-    private static final String textXmlMimeType = "text/xml";
-    private static final String octetMimeType = "application/octet-stream";
-    private static final String plainTextMimeType = "text/plain";
-    private static final String jsonMimeType = "application/json";
+//    protected String packageName;
+//    protected String packageVersion;
+//    protected String externCrateName;
+//    protected Map<String, Map<String, String>> pathSetMap = new HashMap();
+//    protected Map<String, Map<String, String>> callbacksPathSetMap = new HashMap();
+//
+//    // private static final String uuidType = "uuid::Uuid";
+    private static final String uuidType = "web::Path<Uuid>";
+//    private static final String bytesType = "swagger::ByteArray";
+//
+//    private static final String xmlMimeType = "application/xml";
+//    private static final String textXmlMimeType = "text/xml";
+//    private static final String octetMimeType = "application/octet-stream";
+//    private static final String plainTextMimeType = "text/plain";
+//    private static final String jsonMimeType = "application/json";
 
     // RFC 7386 support
     private static final String mergePatchJsonMimeType = "application/merge-patch+json";
@@ -135,6 +136,9 @@ public class RustActixWebServerServerCodegen extends RustServerCodegen implement
          */
         additionalProperties.put("apiVersion", apiVersion);
         additionalProperties.put("apiPath", apiPath);
+
+        typeMapping.put("UUID", uuidType);
+        typeMapping.put("object", "serde_json::Value");
 
         /*
          * Supporting Files.  You can write single files for the generator with the
